@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 // Firebase services + environment module
 import { AngularFireModule } from '@angular/fire/compat';
@@ -11,6 +12,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { PhoneLoginComponent } from './phone-login/phone-login.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBzNSjDqDMolBbWBx58eFDI8UYtJLjYyaw",
@@ -24,7 +26,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    PhoneLoginComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -33,6 +36,7 @@ const firebaseConfig = {
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

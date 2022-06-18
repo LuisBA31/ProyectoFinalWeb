@@ -12,19 +12,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   public phoneClick() {
-    let aux: any;
-    aux = document.getElementById("formPrincipal");
-    aux.style.display = "none"
-    let result: any;
-    result = document.getElementById("LoginPhone");
-    result.style.display = "block"
-  }
-  public phoneClickRegresar() {
-    let aux: any;
-    aux = document.getElementById("formPrincipal");
-    aux.style.display = "block"
-    let result: any;
-    result = document.getElementById("LoginPhone");
-    result.style.display = "none"
+    window.location.href="../../src/app/login-phone/login-phone.component.html";
   }
 }
