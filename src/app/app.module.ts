@@ -15,6 +15,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
 import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 
 firebase.initializeApp(environment.firebase)
 
@@ -23,7 +26,10 @@ firebase.initializeApp(environment.firebase)
     AppComponent,
     LoginComponent,
     PhoneLoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent,
+    HeaderComponent,
+    MenuAdminComponent
   ],
   imports: [
     AngularFireAuthModule,
