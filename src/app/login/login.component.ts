@@ -16,11 +16,19 @@ export class LoginComponent implements OnInit {
   }
 
   usuarios:any = {
+    CategoriaFav: '',
     NombreUsuario: '',
-    password: '',
-    Privilegio: '0',
+    Privilegio: '',
     email: '',
-    CategoriaFav: ''
+    password: ''
+  }
+
+  usuariosFirebase:any = {
+    CategoriaFav: '',
+    NombreUsuario: '',
+    Privilegio: 0,
+    email: '',
+    password: ''
   }
 
   titulo:string ="Actualidad";
@@ -45,15 +53,17 @@ export class LoginComponent implements OnInit {
 
   registrarse() {
     this.usuarios.CategoriaFav = this.titulo;
+    this.usuariosFirebase.CategoriaFav = this.titulo;
     const { email, password } = this.usuarios;
     this.authService.register(email, password).then(user => {
       console.log("se registro: ", user);
       let lista = [...this.usuarios];
-      let existe = lista.find(user => this.usuarios.email == email);
+      let existe = lista.find(user => user.email == email);
+      //let existe = lista.find(user => this.usuarios.email == email);
 
       if (!existe) {
         console.log("USUARIO NUEVO CREADO")
-        this.database.crear('Usuarios', this.usuarios);
+        this.database.crear('Usuarios', this.usuariosFirebase);
       };
 
       this.router.navigate(['/']);

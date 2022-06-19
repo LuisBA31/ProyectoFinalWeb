@@ -27,11 +27,11 @@
                 <div class="sign-up-htm">
                     <div class="group">
                         <label for="user" class="label">Usuario</label>
-                        <input id="user" type="text" class="input" [(ngModel)]="usuarios.NombreUsuario">
+                        <input id="user" type="text" class="input" [(ngModel)]="usuarios.NombreUsuario" [(ngModel)]="usuariosFirebase.NombreUsuario">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="usuarios.password">
+                        <input id="pass" type="password" class="input" data-type="password" [(ngModel)]="usuarios.password" [(ngModel)]="usuariosFirebase.password">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Repetir contraseña</label>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Dirección de correo</label>
-                        <input id="pass" type="text" class="input" [(ngModel)]="usuarios.email">
+                        <input id="pass" type="text" class="input" [(ngModel)]="usuarios.email" [(ngModel)]="usuariosFirebase.email">
                     </div>
                     <div class="group"><label for="pass" class="label">Categoria favorita</label></div>
                     <div class="btn-group group">
