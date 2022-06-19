@@ -8,21 +8,14 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
+import firebase from 'firebase/compat/app';
+import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PhoneLoginComponent } from './phone-login/phone-login.component';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBzNSjDqDMolBbWBx58eFDI8UYtJLjYyaw",
-  authDomain: "requiemgeekshop.firebaseapp.com",
-  projectId: "requiemgeekshop",
-  storageBucket: "requiemgeekshop.appspot.com",
-  messagingSenderId: "246133176804",
-  appId: "1:246133176804:web:bc564b8c33f60fec372ff1"
-};
-
+firebase.initializeApp(environment.firebase)
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +23,7 @@ const firebaseConfig = {
     PhoneLoginComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,

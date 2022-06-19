@@ -13,8 +13,8 @@ export class PhoneNumber {
 
   // format phone numbers as E.164
   get e164() {
-    const num = this.country + this.area + this.prefix + this.line
-    return `+${num}`
+    return "+52" + this.area + this.prefix + this.line
+    
   }
 
 }
@@ -38,19 +38,21 @@ export class PhoneLoginComponent implements OnInit {
 
   ngOnInit() {
     this.windowRef = this.win.windowRef
-    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
+    this.windowRef.RecaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
 
-    this.windowRef.recaptchaVerifier.render()
+    this.windowRef.RecaptchaVerifier.render()
   }
 
 
   sendLoginCode() {
 
-    const appVerifier = this.windowRef.recaptchaVerifier;
+    const appVerifier = this.windowRef.RecaptchaVerifier;
+    
+    console.log(appVerifier)
 
-    const num = this.phoneNumber.e164;
+    let num = this.phoneNumber.e164;
 
-    firebase.auth().signInWithPhoneNumber(num, appVerifier)
+    firebase.auth().signInWithPhoneNumber(num,appVerifier)
             .then((result: any) => {
 
                 this.windowRef.confirmationResult = result;
