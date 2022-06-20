@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
         this.database.crear('Usuarios', this.usuariosFirebase);
       };
 
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     }).catch(err => {
       console.log(err)
     })
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
         alert("Datos incorrectos, si no tenes cuenta registrate!");
         return;
       };
-      this.router.navigate(['/panelDeControl'])
+      this.router.navigate(['/home']);
     }).catch(err=>{
       console.log(err)
     })

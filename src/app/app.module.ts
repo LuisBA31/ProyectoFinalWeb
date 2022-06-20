@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
 
 firebase.initializeApp(environment.firebase)
 
@@ -29,7 +31,9 @@ firebase.initializeApp(environment.firebase)
     HomeComponent,
     NavbarComponent,
     HeaderComponent,
-    MenuAdminComponent
+    MenuAdminComponent,
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     AngularFireAuthModule,

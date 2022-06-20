@@ -285,9 +285,9 @@ a:hover {
 .form-1 {
 	padding-top: 9.25rem;
 	padding-bottom: 8.5rem;
+    background-color: rgb(37, 32, 56);
 	background-size: cover;
 	text-align: center;
-    background-color: rgb(32, 45, 56);
 }
 
 .form-1 .h2-heading {

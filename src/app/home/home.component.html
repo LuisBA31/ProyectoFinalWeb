@@ -1,21 +1,29 @@
-<app-navbar></app-navbar>
 <app-header></app-header>
-<!-- Services 1 -->
-<div id="services" class="basic-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
-                <div class="image-container">
-                    <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
+<!-- Noticias Generales -->
+<div id="services" class="basic-2" align="center">
+    <h1>Noticias <br> Generales</h1>
+</div>
+<div *ngIf="userLogged|async as user;else InicioSesion">
+    <div id="services" class="basic-1"  *ngFor="let item of noticias; let indice=index">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <h1>{{ noticias[indice].Titulo | uppercase}}</h1>
+                    <hr>
+                    <h5>[{{ noticias[indice].Categoria }}]</h5>
                 </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="text-container">
-                    <h2>Photo shooting and image editing services</h2>
-                    <p>who eat she defective applauded departure joy. Get dissimilar not introduced day her apartment Fully as taste he mr do smile abode every. Luckily we have words offered article led</p>
-                    <a class="read-more no-line blue" href="article.html">Learn more <span class="fas fa-long-arrow-alt-right"></span></a>
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <p>{{ noticias[indice].Descripcion }}</p>
+                        <h5>{{ noticias[indice].Autor }} - {{ noticias[indice].Fecha }}</h5>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<ng-template #InicioSesion>
+    <div id="services" class="basic-2" align="center">
+        <h1>Inicia Sesión para estar al tanto de las noticias <br> más recientes</h1>
+    </div>
+</ng-template>
