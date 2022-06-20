@@ -21,4 +21,25 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  continuar(){
+    if(speechSynthesis.speaking){
+      speechSynthesis.resume();
+    }
+  }
+
+  pause(){
+    if(speechSynthesis.speaking){
+      speechSynthesis.pause();
+    }
+  }
+
+ leer(){
+  let elements;
+    speechSynthesis.cancel();
+  for (let index = 0; index < document.getElementsByClassName('leerlo').length; index++) {
+    elements = document.getElementsByClassName('leerlo')[index].textContent;
+    speechSynthesis.speak(new SpeechSynthesisUtterance(elements!));
+  }
+ }
+
 }

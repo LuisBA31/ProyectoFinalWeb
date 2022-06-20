@@ -4,7 +4,7 @@
 <!-- Navigation -->
 <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
     <div class="container-fluid">
-        <a class="navbar-brand logo-text" [routerLink]="['/home']">TodoNews</a>
+        <a class="navbar-brand logo-text leerlo" [routerLink]="['/home']">TodoNews</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo2" aria-controls="navbarTogglerDemo2" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,26 +17,29 @@
             <div class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-xl-0">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/home']">Home</a>
+                    <a class="nav-link leerlo" [routerLink]="['/home']">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link leerlo" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+                    <a class="nav-link leerlo" [routerLink]="['/contact']">Contact</a>
                 </li>
                 <li class="nav-item" *ngIf="userLogged|async as user;">
-                    <a class="nav-link" [routerLink]="['/menu-admin']">Menú de administrador</a>
+                    <a class="nav-link leerlo" [routerLink]="['/menu-admin']">Menú de administrador</a>
                 </li>
                 <li class="nav-item" *ngIf="userLogged|async as user;else LoginButton">
-                    <a id="iniciarSes" class="nav-link" [routerLink]="['/home']">{{user.email}}</a>
+                    <a id="iniciarSes leerlo" class="nav-link" [routerLink]="['/home']">{{user.email}}</a>
                 </li>
                 <li class="nav-item" *ngIf="userLogged|async as user;">
-                    <button class="btn btn-dark" (click)="cerrarSesion();">Cerrar Sesión</button>
+                    <button class="btn btn-dark leerlo" (click)="cerrarSesion();">Cerrar Sesión</button>
                 </li>
                 <ng-template #LoginButton>
                     <a class="nav-link" [routerLink]="['/login']">Iniciar Sesión</a>
                 </ng-template>
+                <button class="btn btn-dark" (click)="leer()">Leer</button>
+                <button class="btn btn-dark" (click)="pause()">Pausar</button>
+                <button class="btn btn-dark" (click)="continuar()">Continuar</button>
             </ul>
             </div>
         </div>
